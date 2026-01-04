@@ -1,0 +1,54 @@
+# .gitignore for Allocentra
+
+# Nested clone (don't push git repo inside git repo)
+Allocentra/
+
+# Backend (Java/Maven)
+backend/target/
+backend/*.jar
+backend/*.war
+backend/*.ear
+backend/*.class
+backend/.mvn/wrapper/maven-wrapper.jar
+
+# Frontend (Node/React)
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.vite/
+frontend/.env.local
+frontend/.env.production.local
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Database
+*.db
+*.sqlite
+*.h2.db
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Build artifacts
+*.class
+*.jar
+*.war
+.mvn/
+mvnw
+mvnw.cmd
