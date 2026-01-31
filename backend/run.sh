@@ -18,15 +18,18 @@ fi
 
 echo "✅ Java version: $JAVA_VERSION"
 
-# Check if Maven wrapper exists
-if [ ! -f "mvnw" ]; then
-    echo "❌ Maven wrapper not found. Please ensure you're in the backend directory."
+# Check if Maven is available
+if ! command -v mvn &> /dev/null; then
+    echo "❌ Maven is not installed. Please install Maven."
     exit 1
 fi
 
-# Make Maven wrapper executable
-chmod +x mvnw
+echo "✅ Maven is available"
 
-# Run the application
-echo "📦 Building and running Allocentra..."
-./mvnw clean spring-boot:run
+# Run the application with dev profile (uses H2 in-memory database)
+echo "📦 Building and running Allocentra with dev profile..."
+echo "🔍 Using H2 in-memory database"
+echo "🌐 API will be available at http://localhost:8080"
+echo "📖 API docs will be at http://localhost:8080/swagger-ui.html"
+echo ""
+mvn clean spring-boot:run -Dspring-boot.run.profiles=dev

@@ -67,7 +67,6 @@ public class AllocationRun {
     @Column(precision = 19, scale = 2)
     private BigDecimal totalAllocated;
 
-    @Column(precision = 10, scale = 4)
     private Double budgetUtilization;
 
     // Execution metrics

@@ -95,7 +95,6 @@ public class Request {
     @Builder.Default
     private RequestStatus status = RequestStatus.PENDING;
 
-    @Column(precision = 10, scale = 2)
     private Double score;
 
     @CreatedDate
